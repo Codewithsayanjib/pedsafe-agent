@@ -1,4 +1,7 @@
-mlx>=0.22.0
-mlx-lm>=0.21.0
+# Hosted-demo dependencies (Streamlit Community Cloud, Linux).
+# The Benchmark Lab and Batch Explorer tabs run from committed result files and
+# need only Streamlit. Live on-device inference (the Live Trace tab) uses Apple
+# MLX, which is Apple-Silicon only — install requirements-local.txt on a Mac for
+# that. See README.
+streamlit>=1.36
 pydantic>=2.0.0
-transformers>=4.40.0

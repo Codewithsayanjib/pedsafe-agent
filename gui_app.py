@@ -295,6 +295,12 @@ def load_json(name):
         return None
 
 
+import importlib.util
+# Live inference needs Apple MLX (Apple-Silicon only). On a hosted Linux demo it
+# is absent, so the data-driven tabs still work and Live Trace shows a note.
+MLX_AVAILABLE = importlib.util.find_spec("mlx") is not None
+
+
 @st.cache_resource(show_spinner="Loading on-device SLM agents (first run only)…")
 def get_pipeline():
     from agents.pipeline import PedSafePipeline
@@ -307,6 +313,18 @@ def get_pipeline():
 def live_trace():
     st.markdown("#### Live four-agent trace")
     st.markdown(flow_svg(), unsafe_allow_html=True)
+
+    if not MLX_AVAILABLE:
+        st.info("🖥️ **Live inference runs on-device only.** The four agents use "
+                "Apple **MLX** (Apple-Silicon GPU), which isn't available on this "
+                "hosted demo. Clone the repo and run it on a Mac "
+                "(`pip install -r requirements-local.txt`) to trace cases live. "
+                "Meanwhile, the **Benchmark Lab** and **Batch Explorer** tabs show "
+                "the full real-data results.")
+        st.caption("Example traps you could run on-device:")
+        for name in EXAMPLES:
+            st.markdown(f"<span class='chip'>{name}</span>", unsafe_allow_html=True)
+        return
 
     col_in, col_ex = st.columns([3, 2])
     with col_ex:
