@@ -1,0 +1,38 @@
+[*] Loaded saved vectors (cases_done=480): dose n=321, ceiling n=59
+[*] Loaded 2202 REAL pediatric cases from openFDA FAERS (faers_cohort.json).
+[*] Limited to first 480 cases for this run.
+[*] Initializing model into unified memory: mlx-community/Phi-4-mini-instruct-4bit ...
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 11648.15it/s]
+[transformers] This model config has set a `rope_parameters['original_max_position_embeddings']` field, to be used together with `max_position_embeddings` to determine a scaling factor. Please set the `factor` field of `rope_parameters`with this ratio instead -- we recommend the use of this field over `original_max_position_embeddings`, as it is compatible with most model architectures.
+[✓] Loaded mlx-community/Phi-4-mini-instruct-4bit in 1.96s
+[*] Initializing model into unified memory: mlx-community/Llama-3.2-3B-Instruct-4bit ...
+Fetching 6 files:   0%|          | 0/6 [00:00<?, ?it/s]Fetching 6 files: 100%|██████████| 6/6 [00:00<00:00, 13957.75it/s]
+[✓] Loaded mlx-community/Llama-3.2-3B-Instruct-4bit in 1.85s
+  [24/480] elapsed 421s
+  [48/480] elapsed 879s
+  [72/480] elapsed 1338s
+  [96/480] elapsed 1773s
+  [120/480] elapsed 2225s
+  [144/480] elapsed 2659s
+  [168/480] elapsed 3083s
+  [192/480] elapsed 3510s
+  [216/480] elapsed 3951s
+  [240/480] elapsed 4391s
+  [264/480] elapsed 4845s
+  [288/480] elapsed 5312s
+  [312/480] elapsed 5782s
+  [336/480] elapsed 6250s
+  [360/480] elapsed 6699s
+  [384/480] elapsed 7126s
+  [408/480] elapsed 7555s
+  [432/480] elapsed 7976s
+  [456/480] elapsed 8407s
+  [480/480] elapsed 8823s
+Traceback (most recent call last):
+  File "/Users/work/Documents/antigravity/quirky-curie/PedSafe-Agent/realdata/add_mid_model.py", line 146, in <module>
+    main()
+    ~~~~^^
+  File "/Users/work/Documents/antigravity/quirky-curie/PedSafe-Agent/realdata/add_mid_model.py", line 73, in main
+    a, bvec = vec["Monolithic-3B"][m], saved["Monolithic-3B"][m]
+                                       ~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'Monolithic-3B'

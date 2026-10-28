@@ -1,0 +1,27 @@
+[*] Loaded 2202 REAL pediatric cases from openFDA FAERS (faers_cohort.json).
+[*] Limited to first 480 cases for this run.
+[*] Monolithic-7B: native-template re-run over 480 cases …
+[*] Initializing model into unified memory: mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit ...
+Fetching 6 files:   0%|          | 0/6 [00:00<?, ?it/s]Fetching 6 files: 100%|██████████| 6/6 [00:00<00:00, 11341.07it/s]
+[✓] Loaded mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit in 5.51s
+    [Monolithic-7B] 48/480 elapsed 1912s
+    [Monolithic-7B] 96/480 elapsed 3881s
+    [Monolithic-7B] 144/480 elapsed 5822s
+    [Monolithic-7B] 192/480 elapsed 7839s
+    [Monolithic-7B] 240/480 elapsed 10243s
+    [Monolithic-7B] 288/480 elapsed 12757s
+    [Monolithic-7B] 336/480 elapsed 14748s
+    [Monolithic-7B] 384/480 elapsed 16709s
+    [Monolithic-7B] 432/480 elapsed 18656s
+    [Monolithic-7B] 480/480 elapsed 20484s
+
+==========================================================================================
+ NATIVE CHAT-TEMPLATE FAIRNESS RE-RUN  (original -> templated)
+==========================================================================================
+
+Monolithic-7B:
+  dose    : original  20.9%  ->  templated  24.0%   (Δ +3.1 pts)
+  ceiling : original  62.7%  ->  templated  64.4%   (Δ +1.7 pts)
+==========================================================================================
+
+[✓] Template re-run summary -> /Users/work/Documents/antigravity/quirky-curie/PedSafe-Agent/template_rerun_7b_summary.json

@@ -1,0 +1,68 @@
+[*] Loaded saved vectors (cases_done=480): dose n=321, ceiling n=59
+[*] Loaded 2202 REAL pediatric cases from openFDA FAERS (faers_cohort.json).
+[*] Limited to first 480 cases for this run.
+[*] Initializing model into unified memory: mlx-community/Phi-4-mini-instruct-4bit ...
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 12321.09it/s]
+[transformers] This model config has set a `rope_parameters['original_max_position_embeddings']` field, to be used together with `max_position_embeddings` to determine a scaling factor. Please set the `factor` field of `rope_parameters`with this ratio instead -- we recommend the use of this field over `original_max_position_embeddings`, as it is compatible with most model architectures.
+[✓] Loaded mlx-community/Phi-4-mini-instruct-4bit in 2.13s
+  [24/480] elapsed 346s
+  [48/480] elapsed 714s
+  [72/480] elapsed 1087s
+  [96/480] elapsed 1440s
+  [120/480] elapsed 1764s
+  [144/480] elapsed 2092s
+  [168/480] elapsed 2416s
+  [192/480] elapsed 2755s
+  [216/480] elapsed 3102s
+  [240/480] elapsed 3448s
+  [264/480] elapsed 3795s
+  [288/480] elapsed 4136s
+  [312/480] elapsed 4464s
+  [336/480] elapsed 4793s
+  [360/480] elapsed 5118s
+  [384/480] elapsed 5459s
+  [408/480] elapsed 5798s
+  [432/480] elapsed 6140s
+  [456/480] elapsed 6486s
+  [480/480] elapsed 6838s
+
+====================================================================================================
+ EMPIRICAL RESULTS (REAL FAERS DATA) -- 4-WAY
+====================================================================================================
+Metric                         | PedSafe-Agent    | Monolithic-3B    | Monolithic-Mid   | Monolithic-7B   
+----------------------------------------------------------------------------------------------------
+Dose/Decision Accuracy (%)     | 100.0% (n=321)   |  2.2% (n=321)    |  6.5% (n=321)    | 20.9% (n=321)   
+Adult Ceiling Adherence (%)    | 98.3% (n=59)     | 93.2% (n=59)     | 30.5% (n=59)     | 62.7% (n=59)    
+====================================================================================================
+
+ SIGNIFICANCE TESTING (paired; reference = PedSafe-Agent)
+
+Dose/Decision Accuracy (%):
+  PedSafe-Agent    rate=100.0%  wilson95=[98.8, 100.0]  (n=321)
+  Monolithic-3B    rate=  2.2%  wilson95=[1.1, 4.4]  (n=321)
+  Monolithic-Mid   rate=  6.5%  wilson95=[4.3, 9.8]  (n=321)
+  Monolithic-7B    rate= 20.9%  wilson95=[16.8, 25.7]  (n=321)
+    McNemar vs Monolithic-3B    b=314 c=0 p=0.0
+    McNemar vs Monolithic-Mid   b=300 c=0 p=0.0
+    McNemar vs Monolithic-7B    b=254 c=0 p=0.0
+
+Adult Ceiling Adherence (%):
+  PedSafe-Agent    rate= 98.3%  wilson95=[91.0, 99.7]  (n=59)
+  Monolithic-3B    rate= 93.2%  wilson95=[83.8, 97.3]  (n=59)
+  Monolithic-Mid   rate= 30.5%  wilson95=[20.2, 43.1]  (n=59)
+  Monolithic-7B    rate= 62.7%  wilson95=[50.0, 73.9]  (n=59)
+    McNemar vs Monolithic-3B    b=4 c=1 p=0.375
+    McNemar vs Monolithic-Mid   b=41 c=1 p=0.0
+    McNemar vs Monolithic-7B    b=21 c=0 p=1e-06
+
+  Holm-Bonferroni across all comparisons:
+    mcnemar_dose_PedSafe_vs_Monolithic-3B          raw_p=0.00000 adj_p=0.00000 [***]
+    mcnemar_dose_PedSafe_vs_Monolithic-Mid         raw_p=0.00000 adj_p=0.00000 [***]
+    mcnemar_dose_PedSafe_vs_Monolithic-7B          raw_p=0.00000 adj_p=0.00000 [***]
+    mcnemar_ceiling_PedSafe_vs_Monolithic-Mid      raw_p=0.00000 adj_p=0.00000 [***]
+    mcnemar_ceiling_PedSafe_vs_Monolithic-7B       raw_p=0.00000 adj_p=0.00000 [***]
+    mcnemar_ceiling_PedSafe_vs_Monolithic-3B       raw_p=0.37500 adj_p=0.37500 [ns]
+====================================================================================================
+
+[✓] 4-way summary -> /Users/work/Documents/antigravity/quirky-curie/PedSafe-Agent/evaluation_summary_4way.json
+[✓] Raw outputs for taxonomy -> /Users/work/Documents/antigravity/quirky-curie/PedSafe-Agent/data/baseline_raw_dump.jsonl

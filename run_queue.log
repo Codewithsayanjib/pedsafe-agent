@@ -1,0 +1,6 @@
+=== QUEUE START 09:15:19 ===
+[queue] waiting for ablation PID 51378 to finish…
+[queue] ablation finished 09:42:49
+=== STAGE latency START 09:42:49 ===
+=== STAGE latency DONE rc=0 10:14:53 ===
+=== STAGE template START 10:14:53 ===

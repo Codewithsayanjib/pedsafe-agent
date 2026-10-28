@@ -1,0 +1,46 @@
+[*] Loaded 2202 REAL pediatric cases from openFDA FAERS (faers_cohort.json).
+[*] Limited to first 480 cases for this run.
+[*] Monolithic-3B: native-template re-run over 480 cases …
+[*] Initializing model into unified memory: mlx-community/Llama-3.2-3B-Instruct-4bit ...
+Fetching 6 files:   0%|          | 0/6 [00:00<?, ?it/s]Fetching 6 files: 100%|██████████| 6/6 [00:00<00:00, 15382.53it/s]
+[✓] Loaded mlx-community/Llama-3.2-3B-Instruct-4bit in 1.74s
+    [Monolithic-3B] 48/480 elapsed 190s
+    [Monolithic-3B] 96/480 elapsed 398s
+    [Monolithic-3B] 144/480 elapsed 602s
+    [Monolithic-3B] 192/480 elapsed 807s
+    [Monolithic-3B] 240/480 elapsed 1025s
+    [Monolithic-3B] 288/480 elapsed 1219s
+    [Monolithic-3B] 336/480 elapsed 1420s
+    [Monolithic-3B] 384/480 elapsed 1638s
+    [Monolithic-3B] 432/480 elapsed 1833s
+    [Monolithic-3B] 480/480 elapsed 2038s
+[*] Monolithic-Mid: native-template re-run over 480 cases …
+[*] Initializing model into unified memory: mlx-community/Phi-4-mini-instruct-4bit ...
+Fetching 12 files:   0%|          | 0/12 [00:00<?, ?it/s]Fetching 12 files: 100%|██████████| 12/12 [00:00<00:00, 30615.36it/s]
+[transformers] This model config has set a `rope_parameters['original_max_position_embeddings']` field, to be used together with `max_position_embeddings` to determine a scaling factor. Please set the `factor` field of `rope_parameters`with this ratio instead -- we recommend the use of this field over `original_max_position_embeddings`, as it is compatible with most model architectures.
+[✓] Loaded mlx-community/Phi-4-mini-instruct-4bit in 2.06s
+    [Monolithic-Mid] 48/480 elapsed 586s
+    [Monolithic-Mid] 96/480 elapsed 1137s
+    [Monolithic-Mid] 144/480 elapsed 1684s
+    [Monolithic-Mid] 192/480 elapsed 2230s
+    [Monolithic-Mid] 240/480 elapsed 2839s
+    [Monolithic-Mid] 288/480 elapsed 3431s
+    [Monolithic-Mid] 336/480 elapsed 4043s
+    [Monolithic-Mid] 384/480 elapsed 4626s
+    [Monolithic-Mid] 432/480 elapsed 5219s
+    [Monolithic-Mid] 480/480 elapsed 5786s
+
+==========================================================================================
+ NATIVE CHAT-TEMPLATE FAIRNESS RE-RUN  (original -> templated)
+==========================================================================================
+
+Monolithic-3B:
+  dose    : original   2.2%  ->  templated   0.9%   (Δ -1.2 pts)
+  ceiling : original  93.2%  ->  templated  69.5%   (Δ -23.7 pts)
+
+Monolithic-Mid:
+  dose    : original   6.5%  ->  templated  44.2%   (Δ +37.7 pts)
+  ceiling : original  30.5%  ->  templated  40.7%   (Δ +10.2 pts)
+==========================================================================================
+
+[✓] Template re-run summary -> /Users/work/Documents/antigravity/quirky-curie/PedSafe-Agent/template_rerun_summary.json

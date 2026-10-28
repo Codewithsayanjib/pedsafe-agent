@@ -1,0 +1,30 @@
+{
+  "sample": 60,
+  "extraction_fidelity": {
+    "match": 60,
+    "total": 60,
+    "rate": 1.0
+  },
+  "degradation": {
+    "clean": {
+      "dose_rate": 1.0,
+      "n": 60
+    },
+    "typos": {
+      "dose_rate": 0.7333,
+      "n": 60
+    },
+    "random_case": {
+      "dose_rate": 0.9,
+      "n": 60
+    },
+    "reorder": {
+      "dose_rate": 0.9833,
+      "n": 60
+    },
+    "distractor": {
+      "dose_rate": 1.0,
+      "n": 60
+    }
+  }
+}

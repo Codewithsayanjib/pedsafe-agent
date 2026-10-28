@@ -1,0 +1,79 @@
+{
+  "seeds": [
+    7,
+    13
+  ],
+  "limit": 480,
+  "includes_original_slice": true,
+  "per_seed": {
+    "7": {
+      "PedSafe-Agent": {
+        "dose_rate": 0.9969,
+        "dose_n": 322,
+        "ceiling_rate": 1.0,
+        "ceiling_n": 57
+      },
+      "Monolithic-3B": {
+        "dose_rate": 0.0373,
+        "dose_n": 322,
+        "ceiling_rate": 0.9649,
+        "ceiling_n": 57
+      },
+      "Monolithic-Mid": {
+        "dose_rate": 0.0714,
+        "dose_n": 322,
+        "ceiling_rate": 0.3333,
+        "ceiling_n": 57
+      }
+    },
+    "13": {
+      "PedSafe-Agent": {
+        "dose_rate": 0.9968,
+        "dose_n": 308,
+        "ceiling_rate": 0.9848,
+        "ceiling_n": 66
+      },
+      "Monolithic-3B": {
+        "dose_rate": 0.0292,
+        "dose_n": 308,
+        "ceiling_rate": 0.9545,
+        "ceiling_n": 66
+      },
+      "Monolithic-Mid": {
+        "dose_rate": 0.0649,
+        "dose_n": 308,
+        "ceiling_rate": 0.4091,
+        "ceiling_n": 66
+      }
+    }
+  },
+  "aggregate_dose": {
+    "PedSafe-Agent": {
+      "dose_rates": [
+        0.9969,
+        0.9968,
+        1.0
+      ],
+      "mean": 0.9979,
+      "sd": 0.0015
+    },
+    "Monolithic-3B": {
+      "dose_rates": [
+        0.0373,
+        0.0292,
+        0.0218
+      ],
+      "mean": 0.0294,
+      "sd": 0.0063
+    },
+    "Monolithic-Mid": {
+      "dose_rates": [
+        0.0714,
+        0.0649,
+        0.0654
+      ],
+      "mean": 0.0672,
+      "sd": 0.003
+    }
+  }
+}

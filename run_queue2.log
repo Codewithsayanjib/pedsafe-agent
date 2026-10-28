@@ -1,0 +1,8 @@
+=== QUEUE2 START 10:20:32 ===
+[queue2] waiting for template PID 60793 to finish…
+[queue2] template finished 12:25:34
+=== STAGE perturb START 12:25:34 ===
+=== STAGE perturb DONE rc=0 12:58:06 ===
+=== STAGE multiseed START 12:58:06 ===
+=== STAGE multiseed DONE rc=0 19:22:34 ===
+=== QUEUE2 ALL DONE 19:22:34 ===

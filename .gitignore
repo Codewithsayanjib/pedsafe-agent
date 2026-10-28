@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# OS
+.DS_Store
+
+# Regenerable raw openFDA FAERS API cache (large, re-downloaded on demand)
+realdata/.faers_cache/

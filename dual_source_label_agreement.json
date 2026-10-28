@@ -1,0 +1,95 @@
+{
+  "primary_source": "FDA package inserts + WHO Model Formulary for Children",
+  "secondary_source": "BNF for Children (BNFc)",
+  "n_drugs": 5,
+  "mean_jaccard": 0.941,
+  "windows_overlap": "5/5",
+  "std_in_both": "5/5",
+  "per_drug": [
+    {
+      "drug": "Amoxicillin",
+      "primary_window": [
+        13.0,
+        33.0
+      ],
+      "primary_std": 25.0,
+      "bnfc_window": [
+        13.0,
+        30.0
+      ],
+      "bnfc_std": 20.0,
+      "windows_overlap": true,
+      "jaccard": 0.85,
+      "prim_std_in_bnfc": true,
+      "bnfc_std_in_prim": true
+    },
+    {
+      "drug": "Acetaminophen",
+      "primary_window": [
+        10.0,
+        15.0
+      ],
+      "primary_std": 15.0,
+      "bnfc_window": [
+        10.0,
+        15.0
+      ],
+      "bnfc_std": 15.0,
+      "windows_overlap": true,
+      "jaccard": 1.0,
+      "prim_std_in_bnfc": true,
+      "bnfc_std_in_prim": true
+    },
+    {
+      "drug": "Ibuprofen",
+      "primary_window": [
+        5.0,
+        10.0
+      ],
+      "primary_std": 10.0,
+      "bnfc_window": [
+        5.0,
+        10.0
+      ],
+      "bnfc_std": 10.0,
+      "windows_overlap": true,
+      "jaccard": 1.0,
+      "prim_std_in_bnfc": true,
+      "bnfc_std_in_prim": true
+    },
+    {
+      "drug": "Ceftriaxone",
+      "primary_window": [
+        50.0,
+        100.0
+      ],
+      "primary_std": 50.0,
+      "bnfc_window": [
+        50.0,
+        100.0
+      ],
+      "bnfc_std": 80.0,
+      "windows_overlap": true,
+      "jaccard": 1.0,
+      "prim_std_in_bnfc": true,
+      "bnfc_std_in_prim": true
+    },
+    {
+      "drug": "Gentamicin",
+      "primary_window": [
+        4.0,
+        7.5
+      ],
+      "primary_std": 5.0,
+      "bnfc_window": [
+        4.0,
+        7.0
+      ],
+      "bnfc_std": 5.0,
+      "windows_overlap": true,
+      "jaccard": 0.857,
+      "prim_std_in_bnfc": true,
+      "bnfc_std_in_prim": true
+    }
+  ]
+}

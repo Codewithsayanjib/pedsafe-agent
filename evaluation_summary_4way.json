@@ -1,0 +1,197 @@
+{
+  "order": [
+    "PedSafe-Agent",
+    "Monolithic-3B",
+    "Monolithic-Mid",
+    "Monolithic-7B"
+  ],
+  "vectors_source": "merged: saved PedSafe/3B/7B + fresh Mid",
+  "statistics": {
+    "dose": {
+      "metric": "Dose/Decision Accuracy (%)",
+      "systems": {
+        "PedSafe-Agent": {
+          "n": 321,
+          "correct": 321,
+          "rate": 1.0,
+          "wilson_95ci": [
+            0.9882,
+            1.0
+          ],
+          "bootstrap_95ci": [
+            1.0,
+            1.0
+          ]
+        },
+        "Monolithic-3B": {
+          "n": 321,
+          "correct": 7,
+          "rate": 0.0218,
+          "wilson_95ci": [
+            0.0106,
+            0.0443
+          ],
+          "bootstrap_95ci": [
+            0.0062,
+            0.0374
+          ]
+        },
+        "Monolithic-Mid": {
+          "n": 321,
+          "correct": 21,
+          "rate": 0.0654,
+          "wilson_95ci": [
+            0.0432,
+            0.0979
+          ],
+          "bootstrap_95ci": [
+            0.0405,
+            0.0935
+          ]
+        },
+        "Monolithic-7B": {
+          "n": 321,
+          "correct": 67,
+          "rate": 0.2087,
+          "wilson_95ci": [
+            0.1678,
+            0.2565
+          ],
+          "bootstrap_95ci": [
+            0.1651,
+            0.2555
+          ]
+        }
+      },
+      "mcnemar_vs_reference": {
+        "Monolithic-3B": {
+          "b": 314,
+          "c": 0,
+          "p_value": 0.0,
+          "n_discordant": 314
+        },
+        "Monolithic-Mid": {
+          "b": 300,
+          "c": 0,
+          "p_value": 0.0,
+          "n_discordant": 300
+        },
+        "Monolithic-7B": {
+          "b": 254,
+          "c": 0,
+          "p_value": 0.0,
+          "n_discordant": 254
+        }
+      }
+    },
+    "ceiling": {
+      "metric": "Adult Ceiling Adherence (%)",
+      "systems": {
+        "PedSafe-Agent": {
+          "n": 59,
+          "correct": 58,
+          "rate": 0.9831,
+          "wilson_95ci": [
+            0.91,
+            0.997
+          ],
+          "bootstrap_95ci": [
+            0.9492,
+            1.0
+          ]
+        },
+        "Monolithic-3B": {
+          "n": 59,
+          "correct": 55,
+          "rate": 0.9322,
+          "wilson_95ci": [
+            0.8382,
+            0.9733
+          ],
+          "bootstrap_95ci": [
+            0.8644,
+            0.9831
+          ]
+        },
+        "Monolithic-Mid": {
+          "n": 59,
+          "correct": 18,
+          "rate": 0.3051,
+          "wilson_95ci": [
+            0.2025,
+            0.4315
+          ],
+          "bootstrap_95ci": [
+            0.1864,
+            0.4237
+          ]
+        },
+        "Monolithic-7B": {
+          "n": 59,
+          "correct": 37,
+          "rate": 0.6271,
+          "wilson_95ci": [
+            0.4995,
+            0.7392
+          ],
+          "bootstrap_95ci": [
+            0.5085,
+            0.7458
+          ]
+        }
+      },
+      "mcnemar_vs_reference": {
+        "Monolithic-3B": {
+          "b": 4,
+          "c": 1,
+          "p_value": 0.375,
+          "n_discordant": 5
+        },
+        "Monolithic-Mid": {
+          "b": 41,
+          "c": 1,
+          "p_value": 0.0,
+          "n_discordant": 42
+        },
+        "Monolithic-7B": {
+          "b": 21,
+          "c": 0,
+          "p_value": 1e-06,
+          "n_discordant": 21
+        }
+      }
+    },
+    "holm_bonferroni": {
+      "mcnemar_dose_PedSafe_vs_Monolithic-3B": {
+        "raw_p": 0.0,
+        "holm_adj_p": 0.0,
+        "significant": true
+      },
+      "mcnemar_dose_PedSafe_vs_Monolithic-Mid": {
+        "raw_p": 0.0,
+        "holm_adj_p": 0.0,
+        "significant": true
+      },
+      "mcnemar_dose_PedSafe_vs_Monolithic-7B": {
+        "raw_p": 0.0,
+        "holm_adj_p": 0.0,
+        "significant": true
+      },
+      "mcnemar_ceiling_PedSafe_vs_Monolithic-Mid": {
+        "raw_p": 0.0,
+        "holm_adj_p": 0.0,
+        "significant": true
+      },
+      "mcnemar_ceiling_PedSafe_vs_Monolithic-7B": {
+        "raw_p": 1e-06,
+        "holm_adj_p": 2e-06,
+        "significant": true
+      },
+      "mcnemar_ceiling_PedSafe_vs_Monolithic-3B": {
+        "raw_p": 0.375,
+        "holm_adj_p": 0.375,
+        "significant": false
+      }
+    }
+  }
+}

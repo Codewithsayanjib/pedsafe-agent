@@ -1,0 +1,56 @@
+[*] Auditing 3 dose-eligible cases (of 2202 total).
+
+[*] Initializing model into unified memory: mlx-community/Llama-3.2-3B-Instruct-4bit ...
+Fetching 6 files:   0%|          | 0/6 [00:00<?, ?it/s]Fetching 6 files: 100%|██████████| 6/6 [00:00<00:00, 13421.77it/s]
+[✓] Loaded mlx-community/Llama-3.2-3B-Instruct-4bit in 2.04s
+[*] Initializing model into unified memory: mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit ...
+Fetching 6 files:   0%|          | 0/6 [00:00<?, ?it/s]Fetching 6 files: 100%|██████████| 6/6 [00:00<00:00, 15429.69it/s]
+[✓] Loaded mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit in 2.21s
+==========================================================================================
+CASE 1  [Ibuprofen]  trap=standard
+  Narrative: Patient (FAERS 10176701): a 9-year-old weighing 26.76 kg. Documented indication/context: PYREXIA. The clinician is considering Ibuprofen at standard weight-based pediatric dosing. Reported clinical events: Glossodynia, Oral discomfort, Oral discomfort.
+  GROUND-TRUTH label-permitted single-dose window: 133.8-267.6 mg (adult ceiling 800.0)
+  PedSafe-Agent : dose=267.6 mg  -> PASS
+  Monolithic-3B : parsed dose=20.0 mg  -> FAIL
+     raw-3B: {
+  "single_dose_mg": 20.0,
+  "interval_hours": 8,
+  "is_adult_ceiling_capped": false,
+  "status": "BLOCKED_FATAL",
+  "reasoning": "Contraindicated in children due to risk of Reye's syndrome, a rare but serious condition that causes swelling in the liver and brain. Additionally, the patient is experiencing glossodynia and oral discomfort, which may be related to the medication. The clinician shoul
+  Monolithic-7B : parsed dose=130.0 mg  -> FAIL
+     raw-7B: Okay, so I need to figure out the correct dosing for this 9-year-old patient with pyrexia. They're weighing 26.76 kg, and the clinician is thinking about using Ibuprofen. The reported events are glossodynia, oral discomfort, and oral discomfort. Hmm, I remember that glossodynia can sometimes be a sign of an allergic reaction, but in this case, it's the same as the other symptoms, so maybe it's jus
+
+==========================================================================================
+CASE 2  [Acetaminophen]  trap=standard
+  Narrative: Patient (FAERS 10463864): a 17-year-old weighing 47.3 kg. Concurrent medications: CIPROFLOXACIN., DORNASE ALFA (PULMOZYME), IPRATROPIUM, INTRALIPIDS. The clinician is considering Acetaminophen at standard weight-based pediatric dosing. Reported clinical events
+  GROUND-TRUTH label-permitted single-dose window: 473.0-709.5 mg (adult ceiling 1000.0)
+  PedSafe-Agent : dose=709.5 mg  -> PASS
+  Monolithic-3B : parsed dose=250.0 mg  -> FAIL
+     raw-3B: {
+  "single_dose_mg": 250.0,
+  "interval_hours": 4,
+  "is_adult_ceiling_capped": false,
+  "status": "BLOCKED_FATAL",
+  "reasoning": "Contraindicated due to respiratory distress and pyrexia, which are potential side effects of acetaminophen. The patient is also taking Ipratropium, which may be affected by acetaminophen. Additionally, the patient's weight-based dosing may not accurately reflect thei
+  Monolithic-7B : parsed dose=500.0 mg  -> PASS
+     raw-7B: Okay, so I need to figure out the correct dosing for this 17-year-old patient who weighs 47.3 kg. They're on some concurrent medications, and the clinician is thinking about adding Acetaminophen. The patient has respiratory distress and pyrexia. I have to calculate the single dose in mg, the dosing interval in hours, check if there's an adult ceiling, and decide if the prescription should be appro
+
+==========================================================================================
+CASE 3  [Gentamicin]  trap=standard
+  Narrative: Patient (FAERS 20068011): a 1-year-old weighing 6.6 kg. Documented indication/context: Evidence based treatment. Concurrent medications: PIPERACILLIN SODIUM\TAZOBACTAM SODIUM, MEROPENEM, AVIBACTAM SODIUM\CEFTAZIDIME, AMPICILLIN SODIUM\SULBACTAM SODIUM. The cli
+  GROUND-TRUTH label-permitted single-dose window: 26.4-49.5 mg (adult ceiling 400.0)
+  PedSafe-Agent : dose=33.0 mg  -> PASS
+  Monolithic-3B : parsed dose=2.5 mg  -> FAIL
+     raw-3B: {
+  "single_dose_mg": 2.5,
+  "interval_hours": 8,
+  "is_adult_ceiling_capped": false,
+  "status": "BLOCKED_FATAL",
+  "reasoning": "Contraindicated due to Clostridium difficile colitis, a known adverse effect of Gentamicin. The patient is already taking antibiotics (PIPERACILLIN, MEROPENEM, AVIBACTAM, CEFTAZIDIME, AMPICILLIN, SULBACTAM) which may increase the risk of C. difficile colitis. Standard 
+  Monolithic-7B : parsed dose=330.0 mg  -> FAIL
+     raw-7B: Okay, so I need to figure out the correct dosing for Gentamicin for this 1-year-old patient. Let's start by gathering all the necessary information.
+
+The patient is a 1-year-old weighing 6.6 kg. They have concurrent medications, but I think the key point here is the weight and the indication for Gentamicin. The reported clinical event is Clostridium difficile colitis, which might be a reason to ad
+
+[*] Audit complete.

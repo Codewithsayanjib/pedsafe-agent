@@ -1,0 +1,184 @@
+{
+  "dataset": "real_faers",
+  "total_test_cases": 480,
+  "systems": [
+    "PedSafe-Agent",
+    "Monolithic-3B",
+    "Monolithic-7B"
+  ],
+  "counts": {
+    "PedSafe-Agent": {
+      "dose_ok": 321,
+      "ceiling_ok": 58,
+      "fatal_ok": 0,
+      "renal_ok": 0,
+      "dose_n": 321,
+      "ceiling_n": 59,
+      "fatal_n": 0,
+      "renal_n": 0,
+      "time": 2412.644999999999
+    },
+    "Monolithic-3B": {
+      "dose_ok": 7,
+      "ceiling_ok": 55,
+      "fatal_ok": 0,
+      "renal_ok": 0,
+      "dose_n": 321,
+      "ceiling_n": 59,
+      "fatal_n": 0,
+      "renal_n": 0,
+      "time": 1949.684999999998
+    },
+    "Monolithic-7B": {
+      "dose_ok": 67,
+      "ceiling_ok": 37,
+      "fatal_ok": 0,
+      "renal_ok": 0,
+      "dose_n": 321,
+      "ceiling_n": 59,
+      "fatal_n": 0,
+      "renal_n": 0,
+      "time": 23879.550999999996
+    }
+  },
+  "statistics": {
+    "dose": {
+      "metric": "Dose/Decision Accuracy (%)",
+      "systems": {
+        "PedSafe-Agent": {
+          "n": 321,
+          "correct": 321,
+          "rate": 1.0,
+          "wilson_95ci": [
+            0.9882,
+            1.0
+          ],
+          "bootstrap_95ci": [
+            1.0,
+            1.0
+          ]
+        },
+        "Monolithic-3B": {
+          "n": 321,
+          "correct": 7,
+          "rate": 0.0218,
+          "wilson_95ci": [
+            0.0106,
+            0.0443
+          ],
+          "bootstrap_95ci": [
+            0.0062,
+            0.0374
+          ]
+        },
+        "Monolithic-7B": {
+          "n": 321,
+          "correct": 67,
+          "rate": 0.2087,
+          "wilson_95ci": [
+            0.1678,
+            0.2565
+          ],
+          "bootstrap_95ci": [
+            0.1651,
+            0.2555
+          ]
+        }
+      },
+      "mcnemar_vs_reference": {
+        "Monolithic-3B": {
+          "b": 314,
+          "c": 0,
+          "p_value": 0.0,
+          "n_discordant": 314
+        },
+        "Monolithic-7B": {
+          "b": 254,
+          "c": 0,
+          "p_value": 0.0,
+          "n_discordant": 254
+        }
+      }
+    },
+    "ceiling": {
+      "metric": "Adult Ceiling Adherence (%)",
+      "systems": {
+        "PedSafe-Agent": {
+          "n": 59,
+          "correct": 58,
+          "rate": 0.9831,
+          "wilson_95ci": [
+            0.91,
+            0.997
+          ],
+          "bootstrap_95ci": [
+            0.9492,
+            1.0
+          ]
+        },
+        "Monolithic-3B": {
+          "n": 59,
+          "correct": 55,
+          "rate": 0.9322,
+          "wilson_95ci": [
+            0.8382,
+            0.9733
+          ],
+          "bootstrap_95ci": [
+            0.8644,
+            0.9831
+          ]
+        },
+        "Monolithic-7B": {
+          "n": 59,
+          "correct": 37,
+          "rate": 0.6271,
+          "wilson_95ci": [
+            0.4995,
+            0.7392
+          ],
+          "bootstrap_95ci": [
+            0.5085,
+            0.7458
+          ]
+        }
+      },
+      "mcnemar_vs_reference": {
+        "Monolithic-3B": {
+          "b": 4,
+          "c": 1,
+          "p_value": 0.375,
+          "n_discordant": 5
+        },
+        "Monolithic-7B": {
+          "b": 21,
+          "c": 0,
+          "p_value": 1e-06,
+          "n_discordant": 21
+        }
+      }
+    },
+    "holm_bonferroni": {
+      "mcnemar_dose_PedSafe_vs_Monolithic-3B": {
+        "raw_p": 0.0,
+        "holm_adj_p": 0.0,
+        "significant": true
+      },
+      "mcnemar_dose_PedSafe_vs_Monolithic-7B": {
+        "raw_p": 0.0,
+        "holm_adj_p": 0.0,
+        "significant": true
+      },
+      "mcnemar_ceiling_PedSafe_vs_Monolithic-7B": {
+        "raw_p": 1e-06,
+        "holm_adj_p": 2e-06,
+        "significant": true
+      },
+      "mcnemar_ceiling_PedSafe_vs_Monolithic-3B": {
+        "raw_p": 0.375,
+        "holm_adj_p": 0.375,
+        "significant": false
+      }
+    }
+  }
+}

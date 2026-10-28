@@ -1,0 +1,6 @@
+=== 7B QUEUE START 10:29:31 ===
+[7b] waiting for queue PID 61398 to finish…
+[7b] queue finished 19:22:37
+=== STAGE template_7b START 19:22:37 ===
+=== STAGE template_7b DONE rc=0 01:04:06 ===
+=== 7B QUEUE ALL DONE 01:04:06 ===

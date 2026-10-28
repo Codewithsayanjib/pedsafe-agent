@@ -1,0 +1,35 @@
+{
+  "total_test_cases": 10,
+  "raw_results": {
+    "PedSafe-Agent": {
+      "dose_correct": 9,
+      "ceiling_correct": 2,
+      "ceiling_total": 2,
+      "fatal_caught": 3,
+      "fatal_total": 4,
+      "renal_correct": 2,
+      "renal_total": 2,
+      "total_time": 42.027
+    },
+    "Monolithic-3B": {
+      "dose_correct": 2,
+      "ceiling_correct": 0,
+      "ceiling_total": 2,
+      "fatal_caught": 2,
+      "fatal_total": 4,
+      "renal_correct": 0,
+      "renal_total": 2,
+      "total_time": 36.836999999999996
+    },
+    "Monolithic-7B": {
+      "dose_correct": 4,
+      "ceiling_correct": 0,
+      "ceiling_total": 2,
+      "fatal_caught": 4,
+      "fatal_total": 4,
+      "renal_correct": 0,
+      "renal_total": 2,
+      "total_time": 249.887
+    }
+  }
+}

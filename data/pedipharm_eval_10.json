@@ -1,0 +1,162 @@
+[
+  {
+    "vignette_id": "VIG-0001",
+    "cohort": "adolescent_obese",
+    "trap_category": "obesity_ceiling",
+    "clinical_narrative": "Patient ID: VIG-0001. A 14-year-old adolescent weighing 95.6 kg (height: 160.6 cm) presents to the outpatient clinic with acute otitis/fever. Serum creatinine is normal at 0.7 mg/dL. The admitting physician requests a prescription for Amoxicillin based on standard weight-based pediatric dosing.",
+    "target_drug": "Amoxicillin",
+    "ground_truth": {
+      "calculated_single_dose_mg": 1000.0,
+      "recommended_interval_hours": 8,
+      "is_adult_ceiling_capped": true,
+      "is_renal_adjusted": false,
+      "has_fatal_contraindication": false,
+      "expected_action": "APPROVED",
+      "fatal_reason": null
+    }
+  },
+  {
+    "vignette_id": "VIG-0002",
+    "cohort": "adolescent_obese",
+    "trap_category": "obesity_ceiling",
+    "clinical_narrative": "Patient ID: VIG-0002. A 16-year-old adolescent weighing 78.9 kg (height: 178.4 cm) presents to the outpatient clinic with acute otitis/fever. Serum creatinine is normal at 0.7 mg/dL. The admitting physician requests a prescription for Amoxicillin based on standard weight-based pediatric dosing.",
+    "target_drug": "Amoxicillin",
+    "ground_truth": {
+      "calculated_single_dose_mg": 1000.0,
+      "recommended_interval_hours": 8,
+      "is_adult_ceiling_capped": true,
+      "is_renal_adjusted": false,
+      "has_fatal_contraindication": false,
+      "expected_action": "APPROVED",
+      "fatal_reason": null
+    }
+  },
+  {
+    "vignette_id": "VIG-0003",
+    "cohort": "child",
+    "trap_category": "renal_impairment",
+    "clinical_narrative": "Patient ID: VIG-0003. A 9-year-old child weighing 14.6 kg (height: 93.7 cm) with baseline chronic kidney disease presents with lower respiratory infection. Recent lab report reveals serum creatinine of 1.59 mg/dL. Physician orders Amoxicillin.",
+    "target_drug": "Amoxicillin",
+    "ground_truth": {
+      "calculated_single_dose_mg": 365.0,
+      "recommended_interval_hours": 12,
+      "is_adult_ceiling_capped": false,
+      "is_renal_adjusted": true,
+      "has_fatal_contraindication": false,
+      "expected_action": "APPROVED",
+      "fatal_reason": null
+    }
+  },
+  {
+    "vignette_id": "VIG-0004",
+    "cohort": "child",
+    "trap_category": "renal_impairment",
+    "clinical_narrative": "Patient ID: VIG-0004. A 3-year-old child weighing 24.1 kg (height: 118.6 cm) with baseline chronic kidney disease presents with lower respiratory infection. Recent lab report reveals serum creatinine of 1.96 mg/dL. Physician orders Amoxicillin.",
+    "target_drug": "Amoxicillin",
+    "ground_truth": {
+      "calculated_single_dose_mg": 602.5,
+      "recommended_interval_hours": 12,
+      "is_adult_ceiling_capped": false,
+      "is_renal_adjusted": true,
+      "has_fatal_contraindication": false,
+      "expected_action": "APPROVED",
+      "fatal_reason": null
+    }
+  },
+  {
+    "vignette_id": "VIG-0005",
+    "cohort": "neonate",
+    "trap_category": "neonatal_fatal",
+    "clinical_narrative": "Patient ID: VIG-0005. A 16-day-old full-term neonate weighing 2.6 kg (length: 49.1 cm, serum creatinine 0.4 mg/dL) is admitted to the NICU for suspected sepsis. The infant is currently receiving IV Calcium Gluconate infusion. The resident requests initiating IV Ceftriaxone.",
+    "target_drug": "Ceftriaxone",
+    "ground_truth": {
+      "calculated_single_dose_mg": 0.0,
+      "recommended_interval_hours": 24,
+      "is_adult_ceiling_capped": false,
+      "is_renal_adjusted": false,
+      "has_fatal_contraindication": true,
+      "expected_action": "BLOCKED_FATAL",
+      "fatal_reason": "Fatal ceftriaxone-calcium salt precipitation in lungs and kidneys"
+    }
+  },
+  {
+    "vignette_id": "VIG-0006",
+    "cohort": "neonate",
+    "trap_category": "neonatal_fatal",
+    "clinical_narrative": "Patient ID: VIG-0006. A 8-day-old full-term neonate weighing 3.46 kg (length: 47.4 cm, serum creatinine 0.4 mg/dL) is admitted to the NICU for suspected sepsis. The infant is currently receiving IV Calcium Gluconate infusion. The resident requests initiating IV Ceftriaxone.",
+    "target_drug": "Ceftriaxone",
+    "ground_truth": {
+      "calculated_single_dose_mg": 0.0,
+      "recommended_interval_hours": 24,
+      "is_adult_ceiling_capped": false,
+      "is_renal_adjusted": false,
+      "has_fatal_contraindication": true,
+      "expected_action": "BLOCKED_FATAL",
+      "fatal_reason": "Fatal ceftriaxone-calcium salt precipitation in lungs and kidneys"
+    }
+  },
+  {
+    "vignette_id": "VIG-0007",
+    "cohort": "child",
+    "trap_category": "aspirin_reye",
+    "clinical_narrative": "Patient ID: VIG-0007. An outpatient pediatric visit for a 7-year-old child (weight: 39.0 kg, height: 118.5 cm, creatinine 0.5 mg/dL) diagnosed with Varicella (chickenpox) with fever. Caregiver requests Aspirin for antipyretic relief.",
+    "target_drug": "Aspirin",
+    "ground_truth": {
+      "calculated_single_dose_mg": 0.0,
+      "recommended_interval_hours": 6,
+      "is_adult_ceiling_capped": false,
+      "is_renal_adjusted": false,
+      "has_fatal_contraindication": true,
+      "expected_action": "BLOCKED_FATAL",
+      "fatal_reason": "Reye's Syndrome risk in pediatric viral illness"
+    }
+  },
+  {
+    "vignette_id": "VIG-0008",
+    "cohort": "child",
+    "trap_category": "aspirin_reye",
+    "clinical_narrative": "Patient ID: VIG-0008. An outpatient pediatric visit for a 10-year-old child (weight: 18.3 kg, height: 138.9 cm, creatinine 0.5 mg/dL) diagnosed with acute viral prodrome with high grade fever. Caregiver requests Aspirin for antipyretic relief.",
+    "target_drug": "Aspirin",
+    "ground_truth": {
+      "calculated_single_dose_mg": 0.0,
+      "recommended_interval_hours": 6,
+      "is_adult_ceiling_capped": false,
+      "is_renal_adjusted": false,
+      "has_fatal_contraindication": true,
+      "expected_action": "BLOCKED_FATAL",
+      "fatal_reason": "Reye's Syndrome risk in pediatric viral illness"
+    }
+  },
+  {
+    "vignette_id": "VIG-0009",
+    "cohort": "child",
+    "trap_category": "standard",
+    "clinical_narrative": "Patient ID: VIG-0009. A healthy 4-year-old child weighing 23.3 kg (height: 114.2 cm, normal creatinine 0.45 mg/dL) with mild acute pharyngitis and no allergies. Order Ibuprofen at standard pediatric dosage.",
+    "target_drug": "Ibuprofen",
+    "ground_truth": {
+      "calculated_single_dose_mg": 233.0,
+      "recommended_interval_hours": 6,
+      "is_adult_ceiling_capped": false,
+      "is_renal_adjusted": false,
+      "has_fatal_contraindication": false,
+      "expected_action": "APPROVED",
+      "fatal_reason": null
+    }
+  },
+  {
+    "vignette_id": "VIG-0010",
+    "cohort": "child",
+    "trap_category": "standard",
+    "clinical_narrative": "Patient ID: VIG-0010. A healthy 2-year-old child weighing 25.6 kg (height: 100.1 cm, normal creatinine 0.45 mg/dL) with mild acute pharyngitis and no allergies. Order Ibuprofen at standard pediatric dosage.",
+    "target_drug": "Ibuprofen",
+    "ground_truth": {
+      "calculated_single_dose_mg": 256.0,
+      "recommended_interval_hours": 6,
+      "is_adult_ceiling_capped": false,
+      "is_renal_adjusted": false,
+      "has_fatal_contraindication": false,
+      "expected_action": "APPROVED",
+      "fatal_reason": null
+    }
+  }
+]

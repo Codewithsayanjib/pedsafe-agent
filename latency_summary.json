@@ -1,0 +1,41 @@
+{
+  "sample": 25,
+  "results": {
+    "PedSafe-Agent": {
+      "n": 25,
+      "mean_s": 4.416,
+      "median_s": 4.47,
+      "p90_s": 5.136,
+      "cases_per_min": 13.59,
+      "total_s": 110.4,
+      "disk_gb": "multi-agent (2x Llama-3.2-3B-4bit)"
+    },
+    "Monolithic-3B": {
+      "n": 25,
+      "mean_s": 3.749,
+      "median_s": 3.631,
+      "p90_s": 4.29,
+      "cases_per_min": 16.0,
+      "total_s": 93.7,
+      "disk_gb": 3.4
+    },
+    "Monolithic-Mid": {
+      "n": 25,
+      "mean_s": 15.047,
+      "median_s": 14.779,
+      "p90_s": 16.646,
+      "cases_per_min": 3.99,
+      "total_s": 376.2,
+      "disk_gb": 4.06
+    },
+    "Monolithic-7B": {
+      "n": 25,
+      "mean_s": 53.514,
+      "median_s": 45.897,
+      "p90_s": 91.088,
+      "cases_per_min": 1.12,
+      "total_s": 1337.9,
+      "disk_gb": 8.0
+    }
+  }
+}

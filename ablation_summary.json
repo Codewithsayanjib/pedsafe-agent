@@ -1,0 +1,30 @@
+{
+  "n_cases": 250,
+  "n_fatal": 100,
+  "results": {
+    "full": {
+      "tp": 93,
+      "fn": 7,
+      "fp": 0,
+      "tn": 150,
+      "fatal_block_recall": 0.93,
+      "false_block_rate": 0.0
+    },
+    "no_gate": {
+      "tp": 0,
+      "fn": 100,
+      "fp": 0,
+      "tn": 150,
+      "fatal_block_recall": 0.0,
+      "false_block_rate": 0.0
+    },
+    "no_auditor": {
+      "tp": 0,
+      "fn": 100,
+      "fp": 0,
+      "tn": 150,
+      "fatal_block_recall": 0.0,
+      "false_block_rate": 0.0
+    }
+  }
+}

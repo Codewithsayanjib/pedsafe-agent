@@ -1,0 +1,16 @@
+{
+  "Monolithic-7B": {
+    "templated_dose_rate": 0.2399,
+    "templated_dose_n": 321,
+    "templated_ceiling_rate": 0.6441,
+    "templated_ceiling_n": 59,
+    "mcnemar_vs_original_dose": {
+      "b": 24,
+      "c": 34,
+      "p_value": 0.237047,
+      "n_discordant": 58
+    },
+    "original_dose_rate": 0.2087,
+    "original_ceiling_rate": 0.6271
+  }
+}
