@@ -2,6 +2,18 @@
 
 PedSafe-Agent is a specialized multi-agent framework designed to eliminate medication and dosing errors in pediatric healthcare. It demonstrates how collaborative Small Language Models (SLMs, 1B–3B parameters) augmented with symbolic execution engines provably outperform monolithic Large Language Models (70B+ parameters) on multi-step arithmetic, physiological ceiling truncation, and fatal contraindication interception.
 
+## 🌐 Live Demo
+
+An interactive Streamlit console (animated four-agent trace, benchmark lab, and real-data case explorer):
+
+- **Hosted demo (always on):** https://pedsafe-agent.streamlit.app/
+  Benchmark Lab and Batch Explorer run fully in the browser. Live Trace is
+  disabled here (on-device inference needs Apple MLX — see Quickstart).
+- **Live on-device demo (temporary):** https://solution-mug-buying-featuring.trycloudflare.com
+  Full app including live four-agent GPU inference. This link is served from a
+  Mac through a Cloudflare quick tunnel, so it is only reachable while that
+  machine is running the app, and the URL changes if the tunnel is restarted.
+
 ## 📁 Repository Structure
 
 ```
