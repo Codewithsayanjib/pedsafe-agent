@@ -125,6 +125,10 @@ DRUG_MONOGRAPHS: Dict[str, Dict[str, Any]] = {
 
 
 def get_drug_monograph(drug_name: str) -> Optional[Dict[str, Any]]:
+    # The note may name no drug (Extractor returns None / ""); treat that as
+    # "no monograph" rather than crashing on None.lower().
+    if not drug_name:
+        return None
     normalized = drug_name.lower().replace("-", "_").replace(" ", "_")
     return DRUG_MONOGRAPHS.get(normalized)
 

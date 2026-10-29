@@ -50,9 +50,11 @@ class SymbolicDosingSolverAgent:
 
         drug_mono = get_drug_monograph(profile.target_drug)
         if not drug_mono:
-            # Fallback default values
+            # No recognized drug in the note (target_drug may be None): return a
+            # conservative fallback plan instead of crashing. drug_name must be a
+            # string for the model, so coerce a missing name to "Unknown".
             return CalculatedDosingPlan(
-                drug_name=profile.target_drug,
+                drug_name=profile.target_drug or "Unknown",
                 dosing_metric="weight",
                 raw_single_dose_mg=profile.weight_kg * 10.0,
                 recommended_single_dose_mg=min(profile.weight_kg * 10.0, 500.0),
