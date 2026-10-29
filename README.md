@@ -96,6 +96,12 @@ its _own_ native chat template** (fair prompting — see *prompt volatility* bel
 \* CI shown for the original-prompt 7B run; the native-template re-run moved it
 only 20.9% → 24.0% (McNemar p = 0.24, not significant).
 
+**Matched-prompt paired statistics (all four systems).** Under the identical
+original-prompt condition, every baseline — including Monolithic-Mid — has a
+Wilson CI and a paired McNemar vs PedSafe: 3B 2.2% [1.1–4.4%], **Mid 6.5%
+[4.3–9.8%]**, 7B 20.9% [16.8–25.7%]; McNemar b = 314 / 300 / 254, c = 0 in every
+case, all Holm-adjusted **p < 0.001**. → `mid_stats_parity.json`
+
 PedSafe's dosing is produced by the **exact symbolic solver**, so on dose-eligible
 cases it is correct by construction; the genuinely fallible surface is SLM
 extraction, reported separately as **100% extraction fidelity** plus a perturbation

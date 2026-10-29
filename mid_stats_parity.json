@@ -1,0 +1,65 @@
+{
+  "n": 321,
+  "prompt_condition": "original (Llama chat template) \u2014 matches the 3-way significance table",
+  "PedSafe-Agent": {
+    "correct": 321,
+    "rate": 1.0,
+    "wilson_95ci": [
+      0.9882,
+      1.0
+    ]
+  },
+  "Monolithic-3B": {
+    "correct": 7,
+    "rate": 0.0218,
+    "wilson_95ci": [
+      0.0106,
+      0.0443
+    ],
+    "mcnemar_vs_PedSafe": {
+      "b": 314,
+      "c": 0,
+      "p_value": 0.0
+    }
+  },
+  "Monolithic-Mid": {
+    "correct": 21,
+    "rate": 0.0654,
+    "wilson_95ci": [
+      0.0432,
+      0.0979
+    ],
+    "mcnemar_vs_PedSafe": {
+      "b": 300,
+      "c": 0,
+      "p_value": 0.0
+    }
+  },
+  "Monolithic-7B": {
+    "correct": 67,
+    "rate": 0.2087,
+    "wilson_95ci": [
+      0.1678,
+      0.2565
+    ],
+    "mcnemar_vs_PedSafe": {
+      "b": 254,
+      "c": 0,
+      "p_value": 0.0
+    }
+  },
+  "holm_bonferroni": {
+    "dose_PedSafe_vs_Monolithic-3B": {
+      "holm_adj_p": 0.0,
+      "significant": true
+    },
+    "dose_PedSafe_vs_Monolithic-Mid": {
+      "holm_adj_p": 0.0,
+      "significant": true
+    },
+    "dose_PedSafe_vs_Monolithic-7B": {
+      "holm_adj_p": 0.0,
+      "significant": true
+    }
+  }
+}
